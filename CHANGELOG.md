@@ -11,6 +11,14 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+
+
+**Note:** Version bump only for package root
+
+
+
+
+
 # 5.0.0 (2024-03-06)
 
 
