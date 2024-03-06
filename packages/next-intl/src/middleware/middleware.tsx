@@ -40,7 +40,7 @@ function receiveConfig<Locales extends AllLocales>(
 
 export default function createMiddleware<Locales extends AllLocales>(
   config: MiddlewareConfig<Locales>,
-  requestHeaders?: Headers,
+  requestHeaders?: Headers
 ) {
   const configWithDefaults = receiveConfig(config);
 
