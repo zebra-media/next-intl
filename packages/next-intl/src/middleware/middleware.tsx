@@ -39,7 +39,8 @@ function receiveConfig<Locales extends AllLocales>(
 }
 
 export default function createMiddleware<Locales extends AllLocales>(
-  config: MiddlewareConfig<Locales>
+  config: MiddlewareConfig<Locales>,
+  requestHeaders?: Headers,
 ) {
   const configWithDefaults = receiveConfig(config);
 
@@ -66,7 +67,7 @@ export default function createMiddleware<Locales extends AllLocales>(
     const hasUnknownHost = configWithDefaults.domains != null && !domain;
 
     function getResponseInit() {
-      const headers = new Headers(request.headers);
+      const headers = requestHeaders || new Headers(request.headers);
       headers.set(HEADER_LOCALE_NAME, locale);
       return {request: {headers}};
     }
